@@ -71,3 +71,24 @@ class Player:
 			if legalRun:
 				meld = Meld("Run", runArray)
 				self._melds.append(meld)
+	def knock(self):
+		'''
+		This method is how a player ends the round. They will have made all of their melds and this will calculate their score by adding meld values and removing
+		deadwood values.
+		return: Total points accrued from the current round 
+		'''
+		global roundOn 
+		pointsAccrued = 0 
+
+		for elt in self._hand:
+			if type(elt) == Meld: #checks if it is of class meld 
+				pointsAccrued += elt.getPoints()
+			else: #deadwood cards
+				try: #values are strings which works only for non-face cards
+					pointsAccrued -= elt.getValue()
+				except TypeError:
+					if elt.getValue() == "Ace":
+						pointsAccrued -= 1
+					else:
+						pointsAccrued -= 10 
+		global roundOn = False
