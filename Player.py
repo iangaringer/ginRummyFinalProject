@@ -14,8 +14,6 @@ class Player:
 		return self._hand
 	def getPoints(self):
 		return self._points 
-	def getSets(self):
-		return self._sets
 #Mutators 
 	def drawCard(self, location):
 		'''
