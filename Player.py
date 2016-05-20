@@ -84,7 +84,7 @@ class Player:
 				pointsAccrued += elt.getPoints()
 			else: #deadwood cards
 				try: #values are strings which works only for non-face cards
-					pointsAccrued -= elt.getValue()
+					pointsAccrued -= int(elt.getValue())
 				except TypeError:
 					if elt.getValue() == "Ace":
 						pointsAccrued -= 1
