@@ -43,5 +43,5 @@ class DiscardPile:
         if len(self._pile) == 0:
             return None
         else:
-            return self._pile[0]
+            return self._pile.pop(0)
             
