@@ -31,3 +31,5 @@ class Deck:
         return self._deck
     def deckShuffle(self):
         random.shuffle(self._deck)
+    def draw(self):
+        return self._deck.pop(0)
