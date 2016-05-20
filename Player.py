@@ -92,3 +92,5 @@ class Player:
 						pointsAccrued -= 10 
 		global roundOn = False
 		return pointAccrued
+	def addPoints(self, points):
+		self._points += points
