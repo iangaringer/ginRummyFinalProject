@@ -33,3 +33,15 @@ class Deck:
         random.shuffle(self._deck)
     def draw(self):
         return self._deck.pop(0)
+
+class DiscardPile:
+    def __init__(self):
+        self._pile = []
+    
+    def getTopCard(self):
+        #in case the discard pile is currently empty
+        if len(self._pile) == 0:
+            return None
+        else:
+            return self._pile.pop(0)
+            
